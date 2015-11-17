@@ -1,4 +1,7 @@
 function Vector = UpdateVector( para_values, WeightVector )
+% Update assigned weights on given places in the WeightVector.
+
+%Real place              Para_value(Place)  %(From)(To)
 WeightVector(1,2)   =   para_values(1);     %AB
 WeightVector(1,3)   =   para_values(2);     %AC
 WeightVector(1,4)   =   para_values(3);     %AD
@@ -47,5 +50,7 @@ WeightVector(11,12) =   para_values(45);    %KL
 WeightVector(12,6)  =   para_values(46);    %LF
 WeightVector(12,10) =   para_values(47);    %LJ
 WeightVector(12,11) =   para_values(48);    %LK
+
+% Return WeightVector
 Vector = WeightVector;
 end

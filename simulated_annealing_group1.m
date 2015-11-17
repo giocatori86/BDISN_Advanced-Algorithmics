@@ -23,27 +23,29 @@ ssr_now = calculate_SSR( para_values, EmpiricalData2 );
 count = 1;
 
 while (T > 0.001)
-   % decreasing the temperature on every step
+   % Decreasing the temperature on every step
     T = T * 0.99 ;
  
     error(count) = ssr_now;
-    % Temporarly Para Values are Para_values + Randomized value between 0
+    % Temporary Para Values are Para_values + Randomized value between 0
     % and 1 * Diagonal Random
     temp_para_values = para_values + (rand(1,48)-0.5) * Diagonal_Random;
     
-    % For every element of para_values adjust with temp_para_values)
+    % For every element of para_values adjust with temporary para_values)
         for i = 1 : length(para_values)
                     temp_para_values(i) = max(0, min(1, temp_para_values(i) ));  
         end
-        % Calculate temporarly SSR with the temp para_values on ReferenceSet 
+        % Calculate temporary SSR with the temp para_values on ReferenceSet 
         temp_ssr = calculate_SSR( temp_para_values, EmpiricalData2 );
         
-        % Calculate Delta with temporarly SSR - SSR_now
+        % Calculate Delta with temporary SSR - SSR_now
         delta = temp_ssr - ssr_now ;
+        
         % If Delta < 0 OR random Variable < exponential(-delta/Temperature)
         if ( (delta < 0) || (rand() < exp(-delta/T) )  )
             para_values = temp_para_values ;
-             % ssr_now becomes temporarly SSR 
+             
+            % ssr_now becomes temporary SSR 
             ssr_now = temp_ssr ;
         end
     count = count + 1;
@@ -55,4 +57,6 @@ plot(x, error);
 title({'Plot of Error within Weights'});
 xlabel('epochs');
 ylabel('SSR');
+
+% Show best values in the terminal
 disp(para_values);

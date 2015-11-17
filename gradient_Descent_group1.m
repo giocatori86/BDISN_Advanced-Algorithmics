@@ -1,14 +1,13 @@
+% Load Referenceset (EmpiricalData2)
 load EmpiricalData2.mat;
-
-% Make Empty WeightVector Matrix
-
 
 % parameter step
 parameter_step = 0.01;
+
 % learning rate
 learning_rate = 0.001;
 
-% Number of iterations to find best Accurancy
+% Number of iterations to find best accurancy
 epochs = 100;
 
 % progress of error to plot
@@ -31,16 +30,19 @@ while (count <= epochs)
         for i = 1 : length(para_values)
             sensitivity_values(i) = calculate_param_sensitivity( para_values, i, parameter_step, EmpiricalData2, ssr_now );
         end
-        % For every element of para_values adjust with temp_para_values - learning_rate * sensitivityvalue)
+        % For every element of para_values adjust with temporary para_values - learning_rate * sensitivityvalue)
         for i = 1 : length(para_values)
                     para_values(i) = max(0, min(1, ( para_values(i)- learning_rate * sensitivity_values(i) )));
         end
     count = count + 1;
 end
+
 % Make Plot
 x = (1: 1: count-1);
 plot(x, error);
 xlabel('epochs');
 ylabel('SSR');
 title({'Plot of Error within Weights'});
+
+% Show best values in the terminal
 disp(para_values);
