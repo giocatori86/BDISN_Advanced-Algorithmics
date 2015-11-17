@@ -1,3 +1,10 @@
+%          Model Compilation                     Assignment Week 7
+%          Sander Martijn Kerkdijk               Max Turpijn
+%          Course: Behaviour Dynamics in social Networks 
+%               Vrije Universiteit Amsterdam 2015
+%                    Copying will be punished
+
+
 function model = model_compilation( para_values,EmpiricalData2)
 
 %   Calculate size of Given Matrix

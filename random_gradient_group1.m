@@ -1,3 +1,11 @@
+%          Random Gradient                  Assignment Week 7
+%          Sander Martijn Kerkdijk               Max Turpijn
+%          Course: Behaviour Dynamics in social Networks 
+%               Vrije Universiteit Amsterdam 2015
+%                    Copying will be punished
+
+% INITIALIZATION
+
 load EmpiricalData2.mat;
 
 Diagonal_Random = 0.02;

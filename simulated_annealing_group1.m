@@ -1,3 +1,12 @@
+%          Simulated Annealing                  Assignment Week 7
+%          Sander Martijn Kerkdijk               Max Turpijn
+%          Course: Behaviour Dynamics in social Networks 
+%               Vrije Universiteit Amsterdam 2015
+%                    Copying will be punished
+
+% INITIALIZATION
+
+
 % Load Referenceset (EmpiricalData2)
 load EmpiricalData2.mat;
 

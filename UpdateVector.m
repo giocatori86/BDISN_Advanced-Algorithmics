@@ -1,3 +1,9 @@
+%          Update The Vector                     Assignment Week 7
+%          Sander Martijn Kerkdijk               Max Turpijn
+%          Course: Behaviour Dynamics in social Networks 
+%               Vrije Universiteit Amsterdam 2015
+%                    Copying will be punished
+
 function Vector = UpdateVector( para_values, WeightVector )
 % Update assigned weights on given places in the WeightVector.
 
