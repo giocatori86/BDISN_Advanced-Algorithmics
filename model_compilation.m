@@ -51,7 +51,7 @@ ScaleVector = sum(WeightVector,2);
             for agents = 1:NumberAgents
                 %   Determine the opinions
                 %   State (t+1) = State(t) + ((UpdateParameter * AggImpact)- State(t)
-                State(Steps,agents) = State((Steps-1),agents) + (0.5*((AggImpact(agents) - State((Steps-1),agents))));    
+                State(Steps,agents) = State((Steps-1),agents) + (0.05*((AggImpact(agents) - State((Steps-1),agents))));    
             end
     end
     model = State;
